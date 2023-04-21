@@ -3,9 +3,9 @@
     --color-dark: #222222;
     --color-light: #f8f9fa;
 
-    --spacing-small: 0.6rem;
-    --spacing-medium: 1rem;
-    --spacing-large: 1.25rem;
+    --spacing-small: 10px;
+    --spacing-medium: 15px;
+    --spacing-large: 20px;
 }
 
 *,
@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-dark);
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.7;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,8 +29,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -40,4 +40,23 @@ body {
 
 ::-webkit-scrollbar-track {
     background-color: var(--color-dark);
+}
+
+:global(.img-contain) {
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+:global(.img-cover) {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+:global(.btn) {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
 }
