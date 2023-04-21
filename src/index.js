@@ -6,7 +6,3 @@ import Comics from "./components/Comics";
   await App.render();
   Comics.eventListener();
 })();
-
-// (async () => {
-//   await App.render();
-// })();
