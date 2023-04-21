@@ -2,10 +2,12 @@
     --color-blue: #3199dc;
     --color-dark: #222222;
     --color-light: #f8f9fa;
+    --color-white: #fff;
+    --color-black: #000;
 
-    --spacing-small: 10px;
-    --spacing-medium: 15px;
-    --spacing-large: 20px;
+    --spacing-small: 0.65rem;
+    --spacing-medium: 1rem;
+    --spacing-large: 1.25rem;
 }
 
 *,
@@ -18,7 +20,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--color-dark);
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.7;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,8 +31,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 0.5rem;
+    height: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
