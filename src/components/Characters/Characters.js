@@ -1,49 +1,49 @@
-import { getDataApi } from '../../utils/getDataApi';
-import { IMG_STANDARD_XLARGE } from '../../constants/api';
-import { ROOT_MODAL } from '../../constants/root';
+import { getDataApi } from "../../utils/getDataApi";
+import { IMG_STANDARD_XLARGE } from "../../constants/api";
+import { ROOT_MODAL } from "../../constants/root";
 
-import Notification from '../Notification';
+import Notification from "../Notification";
 
-import imgCloseWhite from './img/close-white.svg';
+import imgCloseWhite from "./img/close-white.svg";
 
-import classes from './Characters.css';
+import classes from "./Characters.css";
 
 class Characters {
-    renderContent(data) {
-        let htmlContent = '';
+  renderContent(data) {
+    let htmlContent = "";
 
-        data.forEach(({ name, thumbnail: { path, extension } }) => {
-            const imgSrc = path + '/' + IMG_STANDARD_XLARGE + '.' + extension;
-            
-            htmlContent += `
-                <li class="${classes.characters__item}">
-                    <img class="img-cover ${classes.characters__img}" src="${imgSrc}" />
-                    <span class="${classes.characters__name}">${name}</span>
-                </li>
-            `;
-        });
+    data.forEach(({ name, thumbnail: { path, extension } }) => {
+      const imgSrc = path + "/" + IMG_STANDARD_XLARGE + "." + extension;
 
-        const htmlWrapper = `
-            <div class="${classes.wrapper}">
-                <ul class="${classes.characters__container}">
-                    ${htmlContent}
-                </ul>
-                <button
-                    class="btn bg-contain ${classes.characters__close}"
-                    onclick="modal.innerHTML = ''"
-                    style="background-image: url(${imgCloseWhite})"
-                ></button>
-            </div>
-        `;
+      htmlContent += `
+        <li class="${classes.characters__item}">
+          <img class="img-cover ${classes.characters__img}" src="${imgSrc}" />
+          <span class="${classes.characters__name}">${name}</span>
+        </li>
+      `;
+    });
 
-        ROOT_MODAL.innerHTML = htmlWrapper;
-    }
+    const htmlWrapper = `
+      <div class="${classes.wrapper}">
+        <ul class="${classes.characters__container}">
+          ${htmlContent}
+        </ul>
+        <button
+          class="btn bg-contain ${classes.characters__close}"
+          onclick="modal.innerHTML = ''"
+          style="background-image: url(${imgCloseWhite})">
+        </button>
+      </div>
+    `;
 
-    async render(uri) {
-        const data = await getDataApi.getData(uri);
+    ROOT_MODAL.innerHTML = htmlWrapper;
+  }
 
-        data.length ? this.renderContent(data) : Notification.render();
-    }
+  async render(uri) {
+    const data = await getDataApi.getData(uri);
+
+    data.length ? this.renderContent(data) : Notification.render();
+  }
 }
 
 export default new Characters();
