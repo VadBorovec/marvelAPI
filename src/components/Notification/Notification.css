@@ -9,7 +9,7 @@
     background-color: var(--color-white);
 }
 .notification__close {
-    width: 30px;
-    height: 30px;
+    width: 2rem;
+    height: 2rem;
     margin-left: var(--spacing-large);
 }

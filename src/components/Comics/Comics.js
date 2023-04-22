@@ -8,6 +8,7 @@ import {
 import { getDataApi } from "../../utils/getDataApi";
 import { ROOT_INDEX } from "../../constants/root";
 
+import Characters from "../Characters/Characters";
 import Error from "../Error";
 
 import classes from "./Comics.css";
@@ -50,7 +51,7 @@ class Comics {
       const uri = element.getAttribute("data-uri");
 
       element.addEventListener("click", () => {
-        console.log(uri);
+        Characters.render(uri);
       });
     });
   }
