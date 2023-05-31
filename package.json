@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://VadBorovec.github.io/marvelAPI",
+
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
+  "homepage": "https://VadBorovec.github.io/marvelAPI",
   "author": "",
   "license": "ISC",
   "devDependencies": {
